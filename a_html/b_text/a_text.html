@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a_text.html</title>
+</head>
+<body>
+  <!-- 
+    ! 1. 제목과 단락
+    1-1. <hn> 태그
+      - 주로 하나의 웹 문서에는 하나의 h1 태그 작성 권장
+      - 주로 h1~h3까지의 제목을 사용함 (n: 1~6까지의 자연수를 뜻함)
+
+      숫자 크기와 글자 크기가 반비례함 
+  -->
+
+  <h1>안녕하세요 heading 요소입니다.</h1>
+  <h2>안녕하세요 heading 요소입니다.</h2>
+  <h3>안녕하세요 heading 요소입니다.</h3>
+
+      <p> 안녕하세요 paragraph 요소에요 </p>
+  <h4>안녕하세요 heading 요소입니다.</h4>
+  <h5>안녕하세요 heading 요소입니다.</h5>
+  <h6>안녕하세요 heading 요소입니다.</h6>
+
+  <!-- 
+    1-2. p 태그 
+      - p 태그 사용 시 앞선 내용과 줄 바꿈이 자동생성됨 (대표적인 블록요소) 
+  
+    1-3. br 태그
+      - p 태그를 사용하지 않는 일반벅인 텍스트 내에서 줄바꿈을 생성해줌   
+      - 주로 p 태그 내의 줄바꿈에 많이 사용됨
+
+      cf) Void 요소라서 내용이 존재하지 않음 -> 닫히는 >에 / 첨부 권장
+  -->
+  <p>
+    안녕하세요. 만나서 반가워요. <br/> 
+    iot 국비 수업이에용 
+  </p>
+
+  <!-- 
+    1-4. <span> 태그
+      - 대표적인 인라인 레벨 요소: 내용만큼만 너비를 차지함 
+      - 태그를 사용하지 않는 텍스트와 시각적인 차이가 없음 
+        : 주로 다른 태그 내의 텍스트를 일부 디자인하거나 따로 지정할 경우 사용함
+      
+  
+  -->
+  " 일반적인 텍스트 "<br/>
+  <span style="color: coral;"> span 태그 적용 텍스트 </span> <br/>
+  일반 텍스트 내에서 <span style="font-weight: bold;">span 태그를 사용해</span>  디자인하기 
+
+  <hr/>
+  <!-- 
+    ! 2. 기타 텍스트 태그
+    2-1. bolockquote 태그
+      - 인용문 태그 (인용: 다른 사람의 말을 가져다 씀)
+      - 한칸 들여쓰여지는 시각적 효과가 있음 
+  -->
+    <blockquote>"안녕 만나서 반가워~"</blockquote>
+
+  <!--
+    2-2. <strong>, <b>
+      - strong: 텍스트를 굵게 '강조'할 때 사용함 
+      - b: 텍스트를 굵게 '표시'할 때 사용함 
+  -->  
+    <strong> 굵은 글씨 strong </strong>  
+    <b>굵은 글씨 bold </b>
+    <br/>
+  <!--
+    2-3. <em>, <i>
+      - em(emphasize): 텍스트를 기울여 '강조'할 때 사용함 
+      - i(italic): 텍스트를 기울여 '표시'할 때 사용함 
+  -->    
+    <em> 기울인 글씨 emphasize </em>
+    <i> 기울인 글씨 italic </i>  
+
+
+
+    <h1>김보민</h1>
+    <p> 
+      안녕하세요! 저는 <strong>웹 개발자</strong> 김보민 입니다. 웹 기술과 백엔드 개발에 관심이 많습니다.
+    </p>
+
+    <h2>취미</h2>
+    <p>
+      <span> 코딩 </span> |
+      <span> 악기 </span> |
+      <span> 예체능 </span> 
+    </p>
+
+    <blockquote cite="https://blog.naver.com/dcomest/223773589197"> 
+      "No Pain, No Gain" - Robert Herrick 
+    </blockquote>
+
+    <p> 연락처: zzxxcc1433@naver.com </p>
+  </body>
+</html>
