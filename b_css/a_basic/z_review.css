@@ -1,0 +1,31 @@
+#unique {
+  color: yellow;
+}
+
+body p {
+  color: blue;
+}
+
+.wrapper p {
+  color: red;
+}
+
+p.special {
+  color: green;
+}
+
+p#unique {
+  color: pink;
+}
+
+/* 
+  style 적용 범위가 좁을 수록 우선시됨
+  -> style 태그 안달아놨으면 얘 나옴
+*/
+p.special#unique {
+  color: orange;
+}
+
+#unique {
+  color: purple;
+}
