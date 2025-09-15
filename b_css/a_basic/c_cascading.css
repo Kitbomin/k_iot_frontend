@@ -1,4 +1,13 @@
 /* 
+# 아이디(id) 스타일 선택자
+: #아이디 명으로 선택자 지정
+*/
+#unique {
+  color: lightpink;
+}
+
+
+/* 
 # 클래스(class 스타일 선택자 
 : .클래스 명으로 선택자 지정
 */
@@ -17,6 +26,8 @@ h1 {
 }
 
 h2 {
+  /* !important 속성은 속성값 옆에 띄어쓰기로 구분해 작성함 */
+  /* color: lightblue !important; */
   color: lightblue;
 }
 
@@ -38,3 +49,29 @@ p {
   */
 }
 
+
+/* 
+# 스타일 상속
+*/
+
+#container {
+  /* 
+  부모 요소인 container div의 글자색이 span 태그에도 적용됨
+  (상속)  
+  */
+  color: red;
+  background-color: yellow;
+}
+
+#inner {
+  font-weight: 900;
+  background-color: green;
+}
+
+.text {
+  /* 요소에 직접적인 스타일 지정 시 상속값에서 벗어나 고유 스타일을 가짐 */
+  color: lightblue;
+
+  /* ingerit: 상속하다 (inner의 배경색인 green으로 지정됨)*/
+  background-color: inherit;
+}
