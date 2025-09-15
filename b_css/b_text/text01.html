@@ -4,6 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>text01.html</title>
+  <style>
+    /* CSS 명령어를 상용해 웹 브라우저가 해당 서체를 다운로드 할 것을 명시
+        : 글꼴 자체를 원격 서버에서 호출 가능
+    */
+    @font-face {
+      font-family: 'YeogiOttaeJalnan';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+      font-weight: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Yeongwol';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2507-2@1.0/YeongwolTTF-Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-display: swap;
+    }
+  </style>
 </head>
 <body>
   <!-- 
@@ -25,6 +43,20 @@
 
       2. 텍스트 레이아웃 스타일 (자간, 문자정렬 등의 조작)
   -->
+
+  <h2>글꼴 스타일(font-family)</h2>
+  <!-- 
+    글꼴의 경우 깨짐 방지를 위해 여러개의 글꼴을 ,를 기준으로 나열함
+
+    +) 글꼴명 자체에 띄어쓰기가 있는 경우 '' 작은 따옴표로 표기해야함
+  -->
+  <p style="font-family: YeogiOttaeJalnan;">글꼴 적용 예시 1</p>
+  <p style="font-family: Yeongwol;">글꼴 적용 예시 2</p>
+  <p>글꼴 적용 예시 3</p>
+
+
+  <hr/>
+
   <p style="font-size: 10px; font-style: italic; font-weight: normal; ">
     font-size 속성(단위) / font-style 속성(italic) / font-weight(예약어)
   </p>
