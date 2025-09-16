@@ -1,4 +1,7 @@
-
+/* 
+  ! 텍스트 스타일링
+  페이지의 모든 <h1> 태그에는 font-size를 24px, font-weight를 bold, 그리고 color를 navy로 설정
+*/
 h1 {
     font-size: 24px;
     font-weight: bold;
