@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>b_unit.html</title>
   <style>
+    /* 페이지 전체에 쓰일 변수 선언 */
+    :root {
+      --primary-color: red;
+      --secondary-color: green;
+      --accent-color: blue;
+      --background-color: lightblue;
+    }
+
     div {
       display: inline-block;
     }
-    body {
+    /* body {
       background-color: lightblue;
-    }
+    } */
   </style>
 </head>
 <body>
@@ -73,7 +81,26 @@
           - 서로 다른 단위값에 대한 계산이 가능함
 
         2) var(): CSS 변수값 활용 가능 
+
+        cf) CSS 변수 선언 시 CSS 커스텀 속성 (변수)은 반드시 -- 하이픈 두개로 시작!!
+          >> -- 접두사 필 수 
+          >> var(--변수이름)
+
+          +) 두개 이상의 단어 결합 시 - 하이픈 사용 권장
+            --main_color 이런것도 되긴 함
+
+        ! -- 두개는 필요
+        ? 그 뒤의 이름은 알파벳/숫자/하이픈/언더스코어 등 조합 가능
+        ? 팀 컨벤션 중요중요중요
     -->
+
+    <div style=" width: 100%; height: 200px; background-color: var(--background-color);">
+      외부 DIV
+      <!-- 여백의 크기를 고정하는 경우 사용함 -->
+      <div style="width: calc(100% - 20px); background-color: var(--accent-color);">내부 DIV</div>
+    </div>
+
+
 
 </body>
 </html>
