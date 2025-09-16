@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>b_unit.html</title>
+  <style>
+    div {
+      display: inline-block;
+    }
+    body {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    ! 색상 단위 총 정리 (Color Values)
+
+    - 키워드 *
+      : 영문명 키워드를 사용
+      ex) orange, purple, pink ...
+
+    - HEX(16진수) *
+      : 0~9 -> 10진수 + a ~ f (5개) => 16개의 표현방식 => 16진수 (0~9~a~f)
+      - #RGB / #RRGGBB / #RRGGBBAA 
+        >> 같은 색상의 값 2개가 같은 경우 축약이 가능함
+
+    - RGB/RGBA *
+      : rgb(r, g, b) / rgba(r, g, b, a)
+      >> r, g, b: 0부터 255 까지의 숫자
+      >> a: 0부터 1까지의 숫자 반영 (소수)
+    - HSL
+
+  -->
+    <div style="width: 100px; height: 100px; background-color: #000000;"></div> 
+    <div style="width: 100px; height: 100px; background-color: #000;"></div>
+    <!-- 4번째 값은 투명도 (0 투명함 ~ f 불투명함) -->
+    <div style="width: 100px; height: 100px; background-color: #0008;"></div>
+    <div style="width: 100px; height: 100px; background-color: rgb(0, 0, 0);"></div><br>
+
+
+    <div style="width: 100px; height: 100px; background-color: #333333;"></div>
+    <div style="width: 100px; height: 100px; background-color: #333;"></div>
+
+    <div style="width: 100px; height: 100px; background-color: #999999;"></div>
+    <div style="width: 100px; height: 100px; background-color: #999;"></div><br>
+
+    <div style="width: 100px; height: 100px; background-color: #eeeeee;"></div>
+    <div style="width: 100px; height: 100px; background-color: #eee;"></div><br>
+
+    <hr>
+
+    <div style="width: 50px; height: 50px; background-color: rgb(0, 0, 0);"></div>
+    <div style="width: 50px; height: 50px; background-color: rgb(255, 0, 0);"></div>
+    <div style="width: 50px; height: 50px; background-color: rgb(0, 255, 0);"></div>
+    <div style="width: 50px; height: 50px; background-color: rgb(0, 0, 255);"></div> <br>
+
+    <div style="width: 50px; height: 50px; background-color: rgb(0, 255, 255);"></div>
+    <div style="width: 50px; height: 50px; background-color: rgb(255, 0, 255);"></div>
+    <div style="width: 50px; height: 50px; background-color: rgb(255, 255, 0);"></div>
+    
+    <div style="width: 50px; height: 50px; background-color: rgba(255, 255, 0, 0.5);"></div>
+    
+    <!-- 
+      ! 이미지 단위값
+        : url () 함수 사용
+        - 이미지 파일 경로를 다옴표로 감싸서 전달 (절대 경로/상대 경로)
+        - url('이미지 파일 경로')
+
+      ! 기타 함수
+        1) calc(): CSS 내에서 간단한 연산 수행
+          - 서로 다른 단위값에 대한 계산이 가능함
+
+        2) var(): CSS 변수값 활용 가능 
+    -->
+
+</body>
+</html>
