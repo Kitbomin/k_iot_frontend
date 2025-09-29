@@ -9,8 +9,9 @@ body {
 div {
   /* flex 컨테이너화 */
   display: flex;
+  flex-wrap: wrap;
 
-  height: 100px;
+  height: 300px;
   border: 1px solid black;
 
   background-color: lightcoral;
@@ -39,12 +40,20 @@ div {
     : 1과 6이 start/end에 딱 붙음 
   */
   justify-content: space-between;
+
+  align-content: flex-start;
+  align-content: flex-end;
+  align-content: center;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: stretch;
 }
 
 
 button {
   width: 15%;
   line-height: 1.5;
+  
 
 }
 
