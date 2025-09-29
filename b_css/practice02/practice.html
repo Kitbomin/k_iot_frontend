@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div > table,tr,th,td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <link rel="stylesheet" href="./practice.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>✨김보민의 포트폴리오✨</h1>
+      <p>풀스텍 개발자 & 게임개발자</p>
+    </div>
+
+    <div>
+      <nav>
+        <ul>
+          <li><a href="#education">교육</a></li>
+          <li><a href="#resume">경력</a> </li>
+          <li><a href="#hobby">취미</a> </li>
+          <li><a href="#contact">연락처</a> </li>
+          <li><a href="#skill">기술 스킬</a> </li>
+        </ul>
+      </nav>
+    </div>
+    
+
+  </header>
+
+  <main>
+
+    <div class="education" id="education">
+      <h2>🎓교육</h2>
+      <hr />
+      <p>동서대학교 소프트웨어학과 및 인공지능공학과 복수전공 - 현재 휴학</p>
+      <p>
+        소프트웨어공학의 기본원리에 대한 깊은 이해를 바탕으로 인공지능까지 발을 뻗어 다양한 프로젝트와 연구에 참여하였습니다.
+      </p>
+
+
+      <div class="resume" id="resume">
+        <h2>💼경력</h2>
+        <p>학부생으로써의 연구성과 및 스터디 내용</p>
+
+        <table>
+          <caption>이력</caption>
+          <thead>
+            <tr>
+              <th>연도</th>
+              <th>장소</th>
+              <th>내용</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>2022-03</td>
+              <td>동서대</td>
+              <td>소프트웨어학과 입학</td>
+            </tr>
+
+            <tr>
+              <td>2024-03</td>
+              <td>동서대</td>
+              <td>인공지능 복수 전공</td>
+            </tr>
+
+
+            <tr>
+              <td>2025-06</td>
+              <td>코리아IT 아카데미</td>
+              <td>IoT과정 수료</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>주니어 개발자로 시작하여 다양한 프로젝트를 성공적으로 이끌며 정점에 오르겠습니다.</p>
+      </div>
+
+
+      <div class="hobby" id="hobby">
+        <h2>🎵취미</h2>
+        <p>
+          오케스트레이션 작곡, 그림, 악기연주, 신화관련 책 읽기
+        </p>
+        <p>
+          음악을 통해 새로운 감정을 알아가고, 이를 작곡으로 풀어내는 것을 좋아합니다.
+        </p>
+      </div>
+
+
+      <div class="contact" id="contact">
+        <h2>📞연락처</h2>
+        <p>이메일: zzxxcc1433@naver.com</p>
+        <p>전화번호: 010-3875-5182</p>
+        <p>프로젝트 문의나 채용 제안은 언제든지 환영합니다.</p>
+      </div>
+
+
+      <div class="skill" id="skill">
+        <h2>기술 스킬</h2>
+        <ol type="A">
+          <li>HTML & CSS</li>
+          <li>Java Script</li>
+          <li>SpringBoot</li>
+          <li>React</li>
+          <li>Node.js</li>
+        </ol>
+        <p>최신 웹 기술에 대한 지속적인 학습과 적용에 힘쓰고 있으며, 다양한 프레임워크와 라이브러리에 익숙할지도</p>
+      </div>
+
+
+      <div class="schedule" id="schedule">
+        <table>
+          <tr>
+            <th>시간</th>
+            <th>월요일</th>
+            <th>화요일</th>
+            <th>수요일</th>
+            <th>목요일</th>
+            <th>금요일</th>
+          </tr>
+
+          <tr>
+            <td>09:00 ~ 10:00</td>
+            <td rowspan="2">프로젝트 참여</td>
+            <td>이메일확인</td>
+            <td rowspan="3">코드리뷰</td>
+            <td>문서작업</td>
+            <td>이메일확인</td>
+          </tr>
+
+          <tr>
+            <td>10:00 ~ 11:00</td>
+            <!-- <td>워크숍</td> -->
+            <td>문서작업</td>
+            <!-- <td>코드리뷰</td> -->
+            <td>팀 미팅</td>
+            <td>개발작업</td>
+          </tr>
+
+          <tr>
+            <td>11:00 ~ 12:00</td>
+            <td colspan="2">워크숍</td>
+            <!-- <td>이메일확인</td> -->
+            <!-- <td>코드리뷰</td> -->
+            <td>개발작업</td>
+            <td>이메일확인</td>
+          </tr>
+        </table>
+
+
+      </div>
+  </main>
+
+  <footer id="footer">
+    <div>
+      <p> ⓒ2025 김보민. 모든 권리 보유.</p>
+      <p>
+        저를 찾아보세요:
+        <a href="https://github.com/Kitbomin">GitHub</a> |
+        <a href="https://velog.io/@zzxxcc1433/posts">블로그</a>
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
