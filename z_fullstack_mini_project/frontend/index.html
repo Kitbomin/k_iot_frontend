@@ -83,7 +83,7 @@
       <div class="container">
         <h3 class="section-title"> 기술 스택 </h3>
         <!-- ＊ 기술 스택은 향후 /api/public/skills 등으로 교체 가능 -->
-        <ul class="tech-stacks-list">
+        <ul class="tech-stack-list">
           <li>
             프론트엔드: <code>React</code>, <code>TypeScript</code>, 상태관리, 접근성, 성능 최적화
           </li>
@@ -99,6 +99,9 @@
         </ul>
       </div>
     </section>
+
+
+
 
     <section id="projects" class="section muted">
       <div class="container">
@@ -134,6 +137,9 @@
     </section>
     
     
+
+
+
     <section id="experiences" class="section">
       <div class="container">
         <h3 class="section-titile">
@@ -148,27 +154,40 @@
       </div>
     </section>
 
+
+
+
+
+
     <section id="contact" class="section muted">
       <div class="container contact">
-        
         <div class="contact-left">
           <h3 class="section-title">문의</h3>
-          <p>협업 제안, 프로젝트 의뢰, 커리어 상담 모두 환영합니다. 가능한 한에서 빠르게 답변드리겠습니다.</p>
-          <form id="contact-from" class="form">
+          <p>협업 제안, 프로젝트 의뢰, 커리어 상담 모두 환영합니다. 가능한 한 빠르게 답변드리겠습니다.</p>
+          <form id="contact-form" class="form">
             <label for="email">이메일</label>
-            <input type="email" id="email" name="email" placeholder="your-email@example.com"/>
+            <input type="email" id="email" name="email" placeholder="your-email@example.com" required />
 
             <label for="message">메시지</label>
-            <textarea name="message" id="message" rows="4" placeholder="하고싶은 말을 적어주세요"></textarea>
+            <textarea name="message" id="message" rows="4" placeholder="프로젝트 범위/일정/예산을 간략히 적어주세요."></textarea>
 
             <button type="submit" class="btn primary">보내기</button>
           </form>
         </div>
-
         <div class="contact-right">
-          <!-- 로그인 상태/ 프로필 또는 안내 배너 동적 표기 가능 -->
+          <!-- ★ 로그인 상태/프로필 또는 안내 배너 동적 표기 가능 ★ -->
           <div class="info-banner">
-            <strong>Tip</strong>: 이력서(PDF)와 GitHub, 데모 링크는 상단 버튼 및 프로젝트 카드에서 확인하실 수 있습니다.
+            <strong>Tip</strong>: 이력서(PDF)와 GitHub, 데모 링크는 상단 버튼 및 프로젝트 카드에서 확인하실 수 있습니다 :)
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Kitbomin" target="_blank" class="social-item" aria-label="GitHub" />
+              <img src="../frontend/assets/gitimage.png" alt="GitHub 아이콘">
+              <span>GitHub</span>
+            </a>
+            <a href="https://velog.io/@zzxxcc1433/posts" target="_blank" class="social-item" aria-label="기술 블로그" />
+              <img src="../frontend/assets/image.png" alt="블로그 아이콘">
+              <span>기술 블로그</span>
+            </a>
           </div>
         </div>
       </div>
