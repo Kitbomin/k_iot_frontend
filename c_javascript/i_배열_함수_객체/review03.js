@@ -171,12 +171,61 @@ class Library {
 
   // +) 추가 기능 구현
   // [필터링] 저자별 도서 필터링
+  filterBooksByAuthor(author) {
+    // 일치하는 저자를 필터링
+    // >> 전체 목록 순회 + 각 데이터의 author값과 매개변수의 author값이 일치하는 경우 새로운 배열로 반환
+    // >> 해당 배열 전체 출력
+    //    : filter + forEach
+
+    // cf) 검색 값은 대소문자 구별 X: toLowerCase()로 두 값의 형태를 일치시킬 것!
+    const filtered = this.books.filter(book => book.author.toLowerCase() === author.toLowerCase());
+    
+    console.log(`=== ${author}의 책 목록 ===`);
+    filtered.forEach(book => {
+      console.log(`${book.id}: ${book.title} - ${book.isAvailable ? '대여 가능' : '대여 중'}`);
+    });
+
+    return filtered;
+  }
 
   // [필터링] 제목 키워드로 도서 검색
+  filterBooksByTitle(keyword) {
+    // 포함되는 제목을 필터링
+    // >> 전체 목록 순회 + 각 데이터의 title 값에 
+    //      , 매개변수의 keyword 값이 포함(includes)된 경우 새로운 배열로 반환 
+    // >> 해당 배열 전체 출력
+    //    : filter + forEach
+
+    const filtered = this.books.filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()));
+    console.log(`=== 제목에 ${keyword}이(가) 포함된 책 목록 ===`);
+    filtered.forEach(book => {
+      console.log(`${book.id}: ${book.title} - ${book.isAvailable ? '대여 가능' : '대여 중'}`);
+    });
+
+    return filtered;
+  }
 
   // [필터링] 대여 가능 여부로 도서 필터링
+  filterBooksByAvailable(isAvailable) {
+    // +) isAvailable 값에 따라 true면 출력 시 ${대여 가능}인 책 목록
+    //          , false면 출력 시 ${대여 중}인 책 목록
+    const status = isAvailable ? '대여 가능' : '대여 중';
+    const filtered = this.books.filter(book => book.isAvailable === isAvailable);
+    
+    console.log(`=== ${status}인 책 목록 ===`);
+    filtered.forEach(book => {
+      console.log(`${book.id}: ${book.title} by ${book.author}`);
+    });
+  }
 
   // [통계] 대여 가능 도서 수 집계
+  countAvailableBooks() {
+    // isAvailable이 true인 데이터만 추출하여 해당 배열의 길이를 측정
+    // >> isAvailable의 변수를 통해 내부의 boolean값을 조건으로 사용
+    const count = this.books.filter(book => book.isAvailable).length;
+    console.log(`총 ${count}권의 책이 대여 가능합니다.`);
+    return count;
+  }
 
 
 }
@@ -195,3 +244,22 @@ busanLibrary.rentBook(1);
 busanLibrary.returnBook(1);
 busanLibrary.displayBook();
 busanLibrary.rentBook(10);
+
+
+const yangsanLibrary = new Library();
+yangsanLibrary.addBook('자스 진짜 근본 없다', 'Ara');
+yangsanLibrary.addBook('C는 진짜 근본인데 너무 원초적이다', 'Silbia');
+yangsanLibrary.addBook('Java 가 진짜 재밌는데', 'Ara');
+yangsanLibrary.addBook('근데 자바 너무 어려움', 'Silbia');
+yangsanLibrary.addBook('C#도 살짝 근본잃은 자바 느낌', 'Ara');
+
+yangsanLibrary.rentBook(1);
+yangsanLibrary.displayBook();
+yangsanLibrary.rentBook(1);
+
+yangsanLibrary.returnBook(1);
+yangsanLibrary.displayBook();
+yangsanLibrary.rentBook(10);
+
+yangsanLibrary.filterBooksByAvailable(true);
+yangsanLibrary.filterBooksByAvailable(false);
