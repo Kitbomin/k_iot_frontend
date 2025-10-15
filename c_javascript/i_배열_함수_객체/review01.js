@@ -88,9 +88,10 @@ function toggleTodo(id) {
     }
 
     return todo;  // id가 일치하지 않는 데이터는 기존 객체를 그대로 반환
-    displayTodo();
-  });
-
+    
+  }
+);
+  displayTodo();
 
 }
 
@@ -101,12 +102,37 @@ function deleteTodo(id) {
   // 1, 2, 3, 4, 5 중에서 4를 제거
   // => 4와 일치하지 않는 1, 2, 3, 5 만을 새로운 배열로 저장한다는 것과 같음 -> 이러면 4가 삭제된것 처럼 보일 수 있음
 
-  
+  todos = todos.filter(todo => todo.id != id);
+  displayTodo();
 
 }
 
 // 4) 할 일 목록 출력
 function displayTodo() {
+  console.log("현재 할 일 목록");
+  todos.forEach(todo => {
+    // 삼항 연산자
+    console.log(
+      `${todo.id}: ${todo.content} - ${todo.completed ? '완료됨' : '완료되지 않음'}`
+    );
 
+    // 논리 연산자
+    // : 완료시 ☑️ 기호를 출력
+    console.log(`${todo.id}: ${todo.content} - ${todo.completed && '☑️'}`);
+
+    // cf) completed(true - 완료됨): 체크 출력해야함
+  })
 }
 
+
+//! == 프로젝트 실행 == 
+addTodo('자바스크립트 복습하기');
+addTodo('미니프로젝트 끝내기');
+addTodo('자바 복습하기');
+addTodo('공모전하기');
+
+toggleTodo(3);
+toggleTodo(2);
+
+
+deleteTodo(1);
