@@ -1,20 +1,28 @@
+// event02.js
 
+//? random 함수 정의: 0부터 255까지의 랜덤 숫자 생성
 function random(number) {
   return Math.floor(Math.random() * (number + 1));
-} 
+}
 
 //? randomColorFunc 함수 정의: 랜덤 색상 생성
 function randomColorFunc(event) {
   const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
 
+  // event: 해당 함수가 실행된 이벤트에서
+  // target: 직접 이벤트가 발생 요소의 값을 불러와
+  // style: 해당 요소 스타일의
+  // backgroundColor: 배경색을
+  // randomColor: 무작위색으로 지정
   event.target.style.backgroundColor = randomColor;
 }
 
 //! === 이벤트 객체 === //
-//: 이벤트 핸들러가 호출될 때 브라우저가 자동으로 '이벤트 객체'를 생성해 이벤트 핸들러에게 전달
-// - 이벤트와 관련된 다양한 속성과 메서드가 포함됨
+// : 이벤트 핸들러가 호출될 떄
+//    , 브라우저가 자동으로 '이벤트 객체'를 생성하여 이벤트 핸들러에게 전달
+// - 이벤트와 관련된 다양한 속성과 메서드가 포함
 
-//! === 이벤트 속성과 메서드 === 
+//! === 이벤트 속성과 메서드 === //
 
 //? 1. type 
 // : 이벤트 유형 명시 (EX: 'click', 'change' 등)
@@ -45,29 +53,28 @@ function randomColorFunc(event) {
 
 // == target == //
 const colorChangeButton = document.querySelector('#colorChangeButton');
-
-colorChangeButton.addEventListener('click' , randomColorFunc);
+colorChangeButton.addEventListener('click', randomColorFunc);
 
 const divs = document.querySelectorAll('.colorDiv');
 divs.forEach(div => div.addEventListener('dblclick', randomColorFunc));
 
-
-// == current == //
-const container = document.querySelector("#container");
-const inner = document.querySelectorAll('.inner');
-
+// == currentTarget == //
+const container = document.querySelector('#container');
+const inners = document.querySelectorAll('.inner');
 
 // - 이벤트 등록: container
-// - 이벤트가 발생한 요소: 정해지지 않ㅇ므
-// container.addEventListener('click', function(event) {})
+// - 이벤트가 발생한 요소: 정해지지 X
+// container.addEventListener('click', function(event) {
+
+// });
+
 container.addEventListener('click', (event) => {
-  console.log('클릭된 요소(target): ' + event.target);
+  console.log('클릭된 요소 (target): ' + event.target);
 
   console.log('이벤트 리스너가 부착된 요소 (currentTarget): ' + event.currentTarget);
 
   console.log('이벤트 유형 (type): ' + event.type);
-})
-
+});
 
 //! 이벤트의 기본 행동 방지
 // : form 태그는 submit 버튼 실행 시
@@ -125,6 +132,4 @@ child.addEventListener('click', (e) => {
   // 이벤트 버블링은 자식 > 부모로 진행
   // : 자식요소이벤트객체.stopPropagation()을 사용하여 이벤트 전파 중지
   e.stopPropagation();
-})
-
-
+});
