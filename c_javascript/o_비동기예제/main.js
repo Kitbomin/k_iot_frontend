@@ -56,7 +56,8 @@ async function addNotice() {
 async function deleteNotice(id) {
   if(!confirm("정말 삭제하시겠습니까?")) return;
 
-  await fetch(`${apiUrl}/${id}`, {method: "DELETE"})
+  await fetch(`${apiUrl}/${id}`, {method: "DELETE"});
+  loadNotices();
 }
 
 
