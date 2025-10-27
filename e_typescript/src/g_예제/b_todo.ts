@@ -42,17 +42,16 @@ interface TodoItem {
 
 //% 3. 프로그램 구현
 // 1) 특정 id를 가진 Todo 항목의 task를 편집하는 함수(editTodo)
-function editTodo(todos: TodoItem[], id:number, task: string): TodoItem[] {
-  const updateTodo = todos.map(todo => todo.id === id ? { ...todo, task: task} : todo);
-  return updateTodo;
+function editTodo(todos: TodoItem[], id: number, newTask: string): TodoItem[] {
+  return todos.map((todo) =>
+    todo.id === id ? { ...todo, task: newTask } : todo
+  ); // id가 일치하면 task를 새 값으로, 그렇지 않으면 그대로 반환
 }
 
 // 2) 완료된 Todo 항목을 모두 삭제하는 함수(clearCompleted)
-function clearCompleted (todos: TodoItem[]): TodoItem[] {
-  const deleteTodo = todos.filter(todo => todo.completed !== true ? {...todo} : todo);
-
-  return deleteTodo;
-} 
+function clearCompleted(todos: TodoItem[]): TodoItem[] {
+  return todos.filter((todo) => !todo.completed); // completed가 false인 항목만 남긴 배열을 반환
+}
 
 // 3) 모든 Todo 항목을 조회하는 함수(getAllTodos)
 function getAllTodos (todos: TodoItem[]) {
@@ -60,29 +59,20 @@ function getAllTodos (todos: TodoItem[]) {
 }
 
 // 4) 특정 상태(completed)에 따라 Todo 항목을 필터링하는 함수(filterTodos)
-function filterTodos (todos: TodoItem[], compledted: boolean): TodoItem[] {
-  // const trueTodos = todos.filter(todo => todo.completed === true);
-  // console.log(trueTodos);
-
-  // const falseTodos = todos.filter(todo => todo.completed === false);
-  // console.log(falseTodos);
-
-  const result = todos.filter(todo => todo.completed !== compledted ? {...todos} : todo );
-
-  return result;
+function filterTodos(todos: TodoItem[], completed: boolean): TodoItem[] {
+  return todos.filter((todo) => todo.completed === completed); // completed 상태가 일치하는 항목들만 반환
 }
 
 // 5) 특정 id를 가진 Todo 항목의 completed 상태를 토글하는 함수(toggleTodo)
 function toggleTodo(todos: TodoItem[], id: number): TodoItem[] {
-  const change = todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo);
-
-  return change;
+  return todos.map((todo) =>
+    todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  ); // id가 일치하면 completed를 토글, 그렇지 않으면 그대로 반환
 }
 
 // 6) 모든 Todo 항목의 completed 상태를 일괄적으로 설정하는 함수(setAllTodosCompletion)
-function setAllTodosCompletion(todos: TodoItem[], compledted: boolean): TodoItem[] {
-  const setAllChange = {...todos, complited: compledted };
-  return setAllChange;
+function setAllTodosCompletion(todos: TodoItem[], completed: boolean): TodoItem[] {
+  return todos.map((todo) => ({ ...todo, completed }));
 }
 
 
@@ -104,6 +94,8 @@ console.log("Edited Todos:", getAllTodos(todos)); // 두 번째 항목의 task�
 
 todos = filterTodos(todos, false);
 console.log("Filtered Incomplete Todos:", todos); // 완료되지 않은 항목들만 필터링하여 출력
+todos = filterTodos(todos, true);
+console.log("Filtered Incomplete Todos:", todos);
 
 todos = clearCompleted(todos);
 console.log("After Clearing Completed Todos:", getAllTodos(todos)); // 완료된 항목 삭제 후 목록 출력
