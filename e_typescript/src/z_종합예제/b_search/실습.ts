@@ -18,12 +18,17 @@ type UsersType = User[];
 const fetchUsers = async (): Promise<UsersType> => {
   try {
     //* API에서 들고옴
-
+    const response = `https://jsonplaceholder.typicode.com/users`;
     //* 그리고 응답값이 정상적이지 않으면 "NetWork response was not ok"을 던짐
+    if (!response.ok) {
+      throw new Error("NetWork response was not ok");
+    }
 
     //* users는 UsersType임 = 근데 비동기적으로 반환된 값을 json으로 바꿀거임
+    const users: UsersType = await response.toString.json(); 
 
     //* 그리고 users를 반환
+    return users;
   
     //? Promise.resolve(value)
     //  : async 함수는 내부에서 어떤 값을 반환(return)하든 자동으로 Promise.resolve(data)로 감싸서 반환하게 됨
@@ -38,27 +43,33 @@ const fetchUsers = async (): Promise<UsersType> => {
 // 4. 사용자 정보를 받아 HTML 요소를 생성하는 함수
 const createUserCard = (user: User): HTMLElement => {
   // * userCard를 만들거임 -> div로 
+  const userCard = document.createElement('div');
   
   //* 그리고 userCard엔 다음과 같은 내용이 들어감
-  // userCard.innerHTML = `
-  //   <h2>${user.name}</h2>
-  //   <p>UserName: ${user.username}</p>
-  //   <p>Email: ${user.email}</p>
-  // `;
+  if (userCard) {
+    userCard.innerHTML = `
+      <h2>${user.name}</h2>
+      <p>UserName: ${user.username}</p>
+      <p>Email: ${user.email}</p>
+    `;
+  }
 
   //* 그리고 userCard를 반환함
-  
+  return userCard;
 }
 
 // 5. 사용자 정보 배열을 받아 화면에 표시하는 함수
 //  : createUserCard에 각 객체 전달
 const displayUsers = (users: UsersType) => {
   //* 사용자 정보리스트를 받아올거임 -> 'user-list'
-
+  const userList = document.getElementById('user-list');
   //* 만약 userList가 존재한다면
   //* -> userList의 내용을 비운다
+  userList!.innerHTML = '';
+
   //* users를 순회돌아 객체마다 card를 만들고, userList에다가 그 카드를 넣는다
-  
+  users.forEach(user => createUserCard(user));
+  userList?.appendChild(user);
 }
 
 // 6. 사용자 정보 필터링하는 함수
@@ -67,6 +78,7 @@ const displayUsers = (users: UsersType) => {
 const filterUsers = (users: UsersType, query: string): UsersType => {
 
   //* user를 거를거다(filter)
+  users.filter();
     //* user의 이름을 소문자로 바꿨을 때, 내용값을 소문자로 바꾼게 포함되있거나
     //* user의 username을 소문자로 바꿨을 때, 내용값을 소문자로 바꾼게 포함되있거나
     //* user의 email을 소문자로 바꿨을 때, 내용값을 소문자로 바꾼게 포함되있는걸
