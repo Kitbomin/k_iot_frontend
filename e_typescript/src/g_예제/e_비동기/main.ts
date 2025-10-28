@@ -70,6 +70,7 @@ function renderPhotos(photos: PhotoType[]) {
     photoElement.innerHTML = `
       <img src='${photo.thumbnailUrl}' alt='${photo.title}' />
       <p>${photo.title}</p>
+      <p>${currentPage}</p>
     `;
 
     container.appendChild(photoElement);

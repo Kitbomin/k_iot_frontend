@@ -32,8 +32,23 @@ fetchButton?.addEventListener('click', async () => {
   const apiUrl = `https://jsonplaceholder.typicode.com/users/${userId}`;
 
   //* -----로딩 메시지 표시-----
-  userDataDiv!.innerHTML = `<p> ... Loading user data </p>`;
+  // userDataDiv!.innerHTML = `<p> ... Loading user data </p>`;
   //* try-catch 블럭을 사용하여 비동기 작업 처리(데이터 불러오기)
+  if (userDataDiv) {
+    userDataDiv.innerHTML = `<p> ... Loading user data </p>`;
+    try {
+      const fetchResponse = await fetch(apiUrl);
+
+      if (!fetchResponse.ok) {
+        throw new Error('사용자 데이터를 못찾았습니다.');
+      }
+
+      const user = await fetchResponse.json();
+      
+    } catch (error) {
+      
+    }
+  }
 
   //? async / await 사용
   // - async의 경우 이벤트 리스너의 콜백함수로 설정

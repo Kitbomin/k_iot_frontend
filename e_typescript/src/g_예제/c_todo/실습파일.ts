@@ -147,7 +147,7 @@ class _TaskManager<T> {
 
   //? 할 일 목록이 변경될 때마다 할 일의 개수를 업데이트하는 로직
   updateTaskCount() {
-    document.getElementById('task-count')?.textContent = `할 일 개수: ${this.tasks.length}`
+    document.getElementById('task-count')!.textContent = `할 일 개수: ${this.tasks.length}`
   }
 
 }

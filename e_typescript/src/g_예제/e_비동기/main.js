@@ -82,7 +82,7 @@ function renderPhotos(photos) {
     photos.forEach(function (photo) {
         var photoElement = document.createElement('div');
         photoElement.className = 'photo-item';
-        photoElement.innerHTML = "\n      <img src='".concat(photo.thumbnailUrl, "' alt='").concat(photo.title, "' />\n      <p>").concat(photo.title, "</p>\n    ");
+        photoElement.innerHTML = "\n      <img src='".concat(photo.thumbnailUrl, "' alt='").concat(photo.title, "' />\n      <p>").concat(photo.title, "</p>\n      <p>").concat(currentPage, "</p>\n    ");
         container.appendChild(photoElement);
     });
 }
