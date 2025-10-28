@@ -71,6 +71,7 @@ const displayUsers = (users: UsersType) => {
 // 4. 사용자 정보를 받아 모달 창에 표시하는 함수
 const showModal = (user: User) => {
   //* modal을 들고온다 -> 'user-modal' 에서
+  const modal = document.getElementById('user-model');
   //* modalContent를 들고온다 -> 'modal-user-details'에서
 
   //* 만약 모달과 모달컨텐츠가 다 존재한다면
@@ -117,15 +118,12 @@ const addEventListener = (users: UsersType) => {
           //* showModal에 user를 넣어 호출한다
 
 
+  //* modal를 가져온다 'user-modal'에서
+  //* closeModal을 가져온다 -> '.close'에서
 
-  const modal = document.getElementById('user-modal') as HTMLElement;
-  const closeModal = document.querySelector('.close') as HTMLElement;
-
-  if (modal && closeModal) {
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    })
-  }
+  //* 만약 modal과 closeModal이 존재한다면
+    //* closeModal에 이벤트를 추가한다
+      //* 모달의 스타일이 보이지 않게
 }
 
 const init = async () => {
