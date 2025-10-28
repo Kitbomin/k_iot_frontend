@@ -125,8 +125,7 @@ const addEventListener = (users: UsersType) => {
   }
 
   searchInput.addEventListener('input', dataFilterAndSort);
-
-  sortSelect.addEventListener('change', dataFilterAndSort)
+  sortSelect.addEventListener('change', dataFilterAndSort);
 }
 
 //! 초기화 함수
