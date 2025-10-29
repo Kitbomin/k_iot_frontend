@@ -21,3 +21,45 @@ body{
   /* 배경 흐림 효과 */
   backdrop-filter: blur(10px);
 }
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+input[type='range'], button {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+input[type='color'] {
+  width: 96px;
+  height: 10px;
+  padding: 10px 14px;
+}
+
+button {
+  background-color: #f8bbd0;
+  color: #4a4a4a;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #f48fb1;
+}
+
+canvas {
+  border: 4px dashed #f8bbd0cc;
+  border-radius: 16px;
+  background-color: white;
+  cursor: crosshair;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
