@@ -1,0 +1,10 @@
+export const tmp = '';
+
+//! services 폴더
+//  : API 통신 및 백엔드 연동
+//  : fetch/axios 기반 연동 코드 작성 공간
+
+//  - userService.ts
+//  - orderService.ts
+//  - bookService.ts
+

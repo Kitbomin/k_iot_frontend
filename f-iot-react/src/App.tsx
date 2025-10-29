@@ -1,5 +1,6 @@
 import './App.css'
-import Basic from './pages/a_basic/index'
+import Basic from '@/pages/a_basic'
+
 
 function App() {
 
