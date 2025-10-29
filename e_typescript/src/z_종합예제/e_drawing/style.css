@@ -46,6 +46,10 @@ input[type='color'] {
   padding: 9px;
 }
 
+input[type='range'] {
+  padding: 0;
+}
+
 button {
   background-color: #f8bbd0;
   color: #4a4a4a;
