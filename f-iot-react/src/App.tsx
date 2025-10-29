@@ -1,5 +1,5 @@
 import './App.css'
-import Basic from './pages/a_basic/B_React_Counter'
+import Basic from './pages/a_basic/index'
 
 function App() {
 
