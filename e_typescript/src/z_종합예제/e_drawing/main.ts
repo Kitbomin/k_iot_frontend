@@ -82,7 +82,7 @@ function createToolbar(): HTMLElement {
   saveButton.onclick = () => {
     const link = document.createElement('a');
     link.download = 'drawing.png';    // 저장 파일명
-    link.href = canvas.toDataUrl();   // 이미지 URL 생성
+    link.href = canvas.toDataURL();   // 이미지 URL 생성
     link.click();                     // 자동 다운로드 실행
 
   }
@@ -100,6 +100,50 @@ function createToolbar(): HTMLElement {
 const canvas = document.createElement('canvas');
 canvas.width = 800;
 canvas.height = 500;
+
+//! 6) 2D 그리기 컨텍스트 영역을 가져오기(캔버스 영역을 JS로 들고오기)
+const ctx = canvas.getContext('2d');
+
+if (ctx) {
+  ctx.lineCap = 'round'; // 선끝이 둥글게
+}
+
+//! 6) 마우스 이벤트 처리
+let isDrawing = false;
+
+//?    마우스를 눌렀을 때
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+
+  ctx?.beginPath();     // 경로 시작 - 그리기 시작
+  ctx?.moveTo(e.offsetX, e.offsetY);  // 그리기 시작점 설정
+
+});
+
+//?    마우스를 이동할 때 (그림을 그리고 있을 때)
+canvas.addEventListener('mousemove', (e) => {
+  if (!isDrawing) return; // 그리지 않을 경우 리턴
+
+  if (ctx) {
+    ctx.strokeStyle = toolState.isEraser ? '#ffffff' : toolState.color;
+    ctx.lineWidth = toolState.size;
+    ctx.lineTo(e.offsetX, e.offsetY);     // 선을 그릴 좌표
+    ctx.stroke();                         // 선 그리기
+  }
+});
+
+//?    마우스를 떼었을 때 (그림을 그리고 있지 않을 때)
+canvas.addEventListener('mouseup', () => {
+  isDrawing = false;    // 그리기 종료
+  ctx?.closePath();     // 경로 추적 종료
+});
+
+//?    캔버스를 벗어난 경우 (뗀 경우와 마찬가지로 종료)
+canvas.addEventListener('mouseleave', () => {
+  isDrawing = false;    // 그리기 종료
+  ctx?.closePath();     // 경로 추적 종료
+});
+
 
 
 
