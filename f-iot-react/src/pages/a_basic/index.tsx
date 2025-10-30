@@ -7,6 +7,7 @@ import B_Counter from './B_React_Counter'
 import C_Component, { img, Img } from './C_Component'
 import D_JSX from './D_JSX'
 import E_JSX from './E_JSX'
+import F_Review from './F_Review'
 
 const h2Style = {
   backgroundColor: 'black',
@@ -39,6 +40,11 @@ function Index() {
       <h2 style={h2Style}>3. JSX(TSX) 리액트의 기본 문법 </h2>
       <D_JSX/>
       <E_JSX/>
+      {/* <h2 style={h2Style}> 복습 중 </h2> */}
+      {/* <F_Review/> */}
+
+      
+
     </div>
   )
 }
