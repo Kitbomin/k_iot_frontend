@@ -10,6 +10,7 @@ import E_JSX from './E_JSX'
 import F_Review from './F_Review'
 import G_Rpops from './G_Rpops'
 import H_Props from './H_Props'
+import I_Randering from './I_Randering'
 
 const h2Style = {
   backgroundColor: 'black',
@@ -47,6 +48,9 @@ function Index() {
       <h2 style={h2Style}>4. Props: 리액트의 데이터 전달 (부모/자식)</h2>
       <G_Rpops/>
       <H_Props/>
+
+      <h2 style={h2Style}>5. Rendering: 조건부 렌더링</h2>
+      <I_Randering />
       
 
     </div>
