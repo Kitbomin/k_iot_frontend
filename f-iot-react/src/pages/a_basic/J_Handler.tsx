@@ -24,7 +24,7 @@ interface ButtonProps {
 // 부모 컴포넌트) 이벤트 핸들러를 정의함
 // 자식 컴포넌트) 해당 핸들러를 props로 받아 실행함
 // >> 이벤트 로직은 부모가 담당하게 되고, UI는 자식이 담당하게 되는 '역할 분리'가 됨
-function ButtonConponent({children, onButtonClick}: ButtonProps) {
+function ButtonComponent({children, onButtonClick}: ButtonProps) {
   return (
     <button onClick={onButtonClick}>
       {children}
@@ -87,9 +87,9 @@ function J_Handler() {
 
 
       <hr />
-      <ButtonConponent onButtonClick={buttonHandler}>
+      <ButtonComponent onButtonClick={buttonHandler}>
         클릭 이벤트 전달
-      </ButtonConponent>
+      </ButtonComponent>
 
       <hr />
       <ConsoleButton message='A버튼 클릭'>A버튼</ConsoleButton>
