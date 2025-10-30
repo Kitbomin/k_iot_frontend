@@ -8,6 +8,8 @@ import C_Component, { img, Img } from './C_Component'
 import D_JSX from './D_JSX'
 import E_JSX from './E_JSX'
 import F_Review from './F_Review'
+import G_Rpops from './G_Rpops'
+import H_Props from './H_Props'
 
 const h2Style = {
   backgroundColor: 'black',
@@ -42,7 +44,9 @@ function Index() {
       <E_JSX/>
       {/* <h2 style={h2Style}> 복습 중 </h2> */}
       {/* <F_Review/> */}
-
+      <h2 style={h2Style}>4. Props: 리액트의 데이터 전달 (부모/자식)</h2>
+      <G_Rpops/>
+      <H_Props/>
       
 
     </div>
