@@ -21,7 +21,7 @@ interface Todo {
 interface TodoItemProps{todo: Todo};
 
 //@ 3. TodoItem 컴포넌트 생성
-const TodoItem: TodoItemProps({todo}: Todo) => {
+const TodoItem = ({todo}: TodoItemProps) => {
   return(
     <div>
       <p>{todo.done}{todo.done && '👉'}id: {todo.id}, text: {todo.text}, done: {todo.done}</p>
