@@ -11,6 +11,7 @@ import F_Review from './F_Review'
 import G_Rpops from './G_Rpops'
 import H_Props from './H_Props'
 import I_Randering from './I_Randering'
+import J_Handler from './J_Handler'
 
 const h2Style = {
   backgroundColor: 'black',
@@ -52,7 +53,8 @@ function Index() {
       <h2 style={h2Style}>5. Rendering: 조건부 렌더링</h2>
       <I_Randering />
       
-
+      <h2 style={h2Style}>6. Handler: 리액트의 이벤트 핸들러</h2>
+      <J_Handler />
     </div>
   )
 }

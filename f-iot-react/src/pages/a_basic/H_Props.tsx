@@ -43,7 +43,7 @@ const UserCard = ({ user }: UserCardProps) => {
 
 type ChildrenType = {
   // ReactNode: React 내의 HTML 요소들 + 사용자 정의 컴포넌트들의 타입
-  childern: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const Wrapper = ({ children }: ChildrenType) => {
