@@ -18,13 +18,13 @@ interface Todo {
   done: boolean;
 }
 //@ 2. TodoItem 컴포넌트 Props 타입 정의 (interface TodoItemProps)
-interface TodoItemProps extends Todo {};
+interface TodoItemProps{todo: Todo};
 
 //@ 3. TodoItem 컴포넌트 생성
-const TodoItem: TodoItemProps ({id, text, done}: Todo) => {
+const TodoItem: TodoItemProps({todo}: Todo) => {
   return(
     <div>
-      <p>{done}{done && '👉'}id: {id}, text: {text}, done: {done}</p>
+      <p>{todo.done}{todo.done && '👉'}id: {todo.id}, text: {todo.text}, done: {todo.done}</p>
     </div>
   );
 
@@ -33,8 +33,9 @@ const TodoItem: TodoItemProps ({id, text, done}: Todo) => {
 // - div 내에서 done이 true면 텍스트 앞에 👉 첨부, 아니면 그냥 출력     >> p 태그
 
 //@ 4. TodoBoard 컴포넌트 Props 타입 정의 (interface TodoBoardProps - todos: Todo[])
-
+interface TodoBoardProps {todos: Todo[]}
 //@ 4. TodoBoard 컴포넌트 생성
+const TodoBoard: TodoBoardProps ()
 // 
 // 반환
 // - todos.length(배열의 길이)
