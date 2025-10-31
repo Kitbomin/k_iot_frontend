@@ -35,7 +35,7 @@ const TodoItem = ({todo}: TodoItemProps) => {
 //@ 4. TodoBoard 컴포넌트 Props 타입 정의 (interface TodoBoardProps - todos: Todo[])
 interface TodoBoardProps {todos: Todo[]}
 //@ 4. TodoBoard 컴포넌트 생성
-const TodoBoard: TodoBoardProps ()
+const TodoBoard = () => {}
 // 
 // 반환
 // - todos.length(배열의 길이)
