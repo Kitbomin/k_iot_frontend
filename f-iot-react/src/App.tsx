@@ -3,6 +3,7 @@ import './App.css'
 import Basic from '@/pages/a_basic'
 import RoutePages from '@/pages/b_Route'
 import Navibar from './components/Navibar'
+import Hooks from '@/pages/c_hooks'
 import PostList from './practice/a_basic/PostList'
 import PostDetail from './components/PostDetail'
 
@@ -21,6 +22,8 @@ function App() {
         
         {/* 중첩 라우팅 사용을 위해 반드시 부모 Route의 path 끝에 </*> 가 필수임 */}
         <Route path='/route/*' element={<RoutePages />}/>
+
+        <Route path='/hooks' element={<Hooks />}/>
 
 
         <Route path='/practice/post' element={<PostList />} />
