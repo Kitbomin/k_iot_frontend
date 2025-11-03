@@ -4,6 +4,7 @@ import Basic from '@/pages/a_basic'
 import RoutePages from '@/pages/b_Route'
 import Navibar from './components/Navibar'
 import PostList from './practice/a_basic/PostList'
+import PostDetail from './components/PostDetail'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 
 
         <Route path='/practice/post' element={<PostList />} />
+        <Route path='/practice/post/:id' element={<PostDetail />}/>
       </Routes>
 
     </>
