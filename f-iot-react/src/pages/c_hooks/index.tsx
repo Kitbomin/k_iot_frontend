@@ -50,22 +50,26 @@ import Ref_Practice02 from './b_useRef/Practice02';
 import Effect01 from './c_useEffect/Effect01';
 import Effect02 from './c_useEffect/Effect02';
 import Effect_Practice01 from './c_useEffect/Practice01';
+import UseCallback from './d_callback_memo/A_UseCallback';
+import UserMemo from './d_callback_memo/B_UseMemo';
 
-// 🌟 Index 컴포넌트
 function Index() {
-  // 섹션 구성만 깔끔하게 정의
   const sectionsData = [
     {
-      title: '1️리액트 Hooks - useState',
+      title: '1️. 리액트 Hooks - useState',
       contents: [<State01 />, <State02 />, <State03 />, <State04 />, <State05 />, <State06 />],
     },
     {
-      title: '️리액트 Hooks - useRef',
+      title: '️2. 리액트 Hooks - useRef',
       contents: [<Ref01 />, <Ref02 />, <Ref_Practice01 />, <Ref_Practice02 />],
     },
     {
-      title: '️리액트 Hooks - useEffect',
+      title: '️3. 리액트 Hooks - useEffect',
       contents: [<Effect01 />, <Effect02 />, <Effect_Practice01 />,],
+    },
+    {
+      title: '️4. 리액트 Hooks - useCallback & useMemo',
+      contents: [<UseCallback/>, <UserMemo />],
     },
   ];
 

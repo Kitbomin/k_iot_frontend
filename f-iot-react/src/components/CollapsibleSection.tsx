@@ -2,7 +2,7 @@ import React from "react";
 
 const h2Style: React.CSSProperties = {
   backgroundColor: "#222",
-  color: "#ebb866",
+  color: "#815854",
   padding: "6px 16px 10px",
   cursor: "pointer",
   borderRadius: "6px",
@@ -39,8 +39,9 @@ function CollapsibleSection({
       <h2
         style={{
           ...h2Style,
-          backgroundColor: isOpen ? "#3a3a3a" : "#222",
-          border: isOpen ? "1px solid #ebb866" : "1px solid transparent",
+          color: isOpen ? "#815854" : "#F9EBDE",
+          backgroundColor: isOpen ? "#F9EBDE" : "#815854",
+          border: isOpen ? "3px solid #815854" : "3px solid transparent",
         }}
         onClick={handleClick}
         tabIndex={-1}
@@ -69,6 +70,8 @@ function CollapsibleSection({
             padding: "12px",
             marginTop: "6px",
             backgroundColor: "#fafafa",
+            overflowY: "auto",
+            height: '100vh'
           }}
         >
           {children}
