@@ -14,11 +14,11 @@ function Practice02() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   //? messages 값이 갱신될 때마다 콜백 함수 실행
-  useEffect(() => {
-    // behavior 속성: 이동 효과를 설정
-    // block 속성: 스크롤 맞춤 설정 (end: 하단 맞춤)
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" , block: 'end'});
-  }, [messages]);
+  // useEffect(() => {
+  //   // behavior 속성: 이동 효과를 설정
+  //   // block 속성: 스크롤 맞춤 설정 (end: 하단 맞춤)
+  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" , block: 'end'});
+  // }, [messages]);
 
   //^ Event Handler
   const handleAddMessage = () => {
