@@ -21,6 +21,8 @@ import Reducer02 from './e_useReducer/Reducer02';
 import Custom01 from './f_custom/Custom01';
 import Custom02 from './f_custom/Custom02';
 import Custom03 from './f_custom/Custom03';
+import TodoAppLocalStorage from '@/practice/c_hooks/TodoAppLocalStorage';
+import WebCam from './WebCam';
 
 function Index() {
   const sectionsData = [
@@ -47,6 +49,14 @@ function Index() {
     {
       title: '️6. 리액트 Hooks - custom Hooks',
       contents: [<Custom01 />, <Custom02 />, <Custom03 /> ],
+    },
+    {
+      title: '️7. 리액트 Hooks - Todo(LocalStorage)',
+      contents: [<TodoAppLocalStorage /> ],
+    },
+    {
+      title: '️8. 리액트 Hooks - WebCam',
+      contents: [<WebCam /> ],
     },
   ];
 
