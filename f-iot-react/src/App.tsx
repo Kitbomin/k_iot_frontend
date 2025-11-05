@@ -6,6 +6,7 @@ import Navibar from './components/Navibar'
 import Hooks from '@/pages/c_hooks'
 import PostList from './practice/a_basic/PostList'
 import PostDetail from './components/PostDetail'
+import SearchApp from './practice/c_hooks/SearchApp'
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
 
         <Route path='/practice/post' element={<PostList />} />
         <Route path='/practice/post/:id' element={<PostDetail />}/>
+        <Route path='/practice/search' element={<SearchApp />}/>
+
+
       </Routes>
 
     </>
