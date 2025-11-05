@@ -1,0 +1,31 @@
+import { useCount } from '@/hooks/useCount'
+import React from 'react'
+
+
+//! 커스텀 푹(Custom Hooks)
+//  : 리액트의 기본 hook들을 사용해 작성되는 재사용 가능한 로직의 모음
+//  >> useState, useEffect, useRef ...
+
+//? 커스텀 훅 사용 방법
+//  1) 반드시 "use"로 시작해야함
+//     ex) useSomething, useInput, use+기능을 설명하는 키워드
+//  2) 다른 Hooks 를 내부에서 호출 가능해야함
+//  3) 결과와 기능을 반환해야함
+
+
+function Custom01() {
+  // const [count, setCount] = useState<number>(0);
+
+  const {count, increment, decrement, reset} = useCount<number>(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>증가</button>
+      <button onClick={decrement}>감소</button>
+      <button onClick={reset}>초기화</button>
+    </div>
+  )
+}
+
+export default Custom01

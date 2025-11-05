@@ -18,6 +18,9 @@ import UseCallback from './d_callback_memo/A_UseCallback';
 import UseMemo from './d_callback_memo/B_UseMemo';
 import Reducer01 from './e_useReducer/Reducer01';
 import Reducer02 from './e_useReducer/Reducer02';
+import Custom01 from './f_custom/Custom01';
+import Custom02 from './f_custom/Custom02';
+import Custom03 from './f_custom/Custom03';
 
 function Index() {
   const sectionsData = [
@@ -40,6 +43,10 @@ function Index() {
     {
       title: '️5. 리액트 Hooks - useReducer',
       contents: [<Reducer01 />, <Reducer02 /> ],
+    },
+    {
+      title: '️6. 리액트 Hooks - custom Hooks',
+      contents: [<Custom01 />, <Custom02 />, <Custom03 /> ],
     },
   ];
 
