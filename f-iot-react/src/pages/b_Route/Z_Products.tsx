@@ -12,7 +12,7 @@ import './Z_Products.css';
 //  5) Dashboard: useNavigate, Outlet
 
 //? 상품 데이터 (목데이터)
-const PRODUCTS = [
+export const PRODUCTS = [
   { id: 1, name: "Laptop", category: "electronics" },
   { id: 2, name: "Headphones", category: "electronics" },
   { id: 3, name: "Shirt", category: "fashion" },
@@ -43,6 +43,7 @@ const PRODUCTS = [
 function Z_Products() {
   const [searchParams, setSearchParams] = useSearchParams();
   const category = searchParams.get("category");
+  const name = searchParams.get("name");
 
   const location = useLocation();
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Z_Products.css'
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { PRODUCTS } from './Z_Products';
 
 
 
@@ -10,6 +11,7 @@ function Z_ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate(); // 함수 반환
   const location = useLocation(); // 실제 데이터값: 객체 반환
+  
 
   const handleBack = () => {
     // location.state.from
@@ -33,15 +35,19 @@ function Z_ProductDetail() {
         <button onClick={() => navigate('/dashboard')}>대시보드로 이동</button>
       </div>
 
+
       <nav className='sub-nav'>
         <Link to='info'>제품 정보</Link>
         <Link to='reviews'>리뷰</Link>
       </nav>
 
+      <p>상품명: {}</p>
+
       <div className="nested-outlet">
         {/* ProductDetail 라우트의 중첩 라우트 페이지가 해당 위치에서 출력 */}
         <Outlet />
       </div>
+      
     </div>
   )
 }
