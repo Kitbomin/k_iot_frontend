@@ -12,7 +12,7 @@ import Z_ProductDetail from './pages/b_Route/Z_ProductDetail'
 import Z_ProductInfo from './pages/b_Route/Z_ProductInfo'
 import Z_ProductReviews from './pages/b_Route/Z_ProductReviews'
 import Z_Dashboard from './pages/b_Route/Z_Dashboard'
-
+import HTTP from './pages/d_http'
 
 function App() {
 
@@ -30,6 +30,8 @@ function App() {
         <Route path='/route/*' element={<RoutePages />}/>
 
         <Route path='/hooks' element={<Hooks />}/>
+        <Route path='/http' element={<HTTP />}/>
+
 
 
         <Route path='/practice/post' element={<PostList />} />
