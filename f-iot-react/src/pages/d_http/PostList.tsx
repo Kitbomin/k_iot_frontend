@@ -17,7 +17,7 @@ function PostList() {
 
   //^ EventHandler
   const handleEdit = (id:number) => {
-    localStorage.setItem('editingPostId', String(id));
+    localStorage.setItem('editingId', String(id));
   }
 
   const handleDelete = async (id:number) => {

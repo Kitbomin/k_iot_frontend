@@ -10,15 +10,26 @@ function PostFrom() {
     body: ''
   });
 
+  const [editingId, setEditingId] = useState<string | null>(localStorage.getItem('editingId'));
+
   const {title, body} = inputValue;
 
-  const storedId = localStorage.getItem('editingPostId');
+  // const storedId = localStorage.getItem('editingPostId');
+  // 로컬스토리지 값 변화를 감지
+  useEffect (() => {
+    const handleStorageChange = () => {
+      setEditingId(localStorage.getItem('editingId'));
+    }
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, [])
 
   useEffect(()=> {
     const fetchPosts = async () => {
-      if (storedId) {
+      if (editingId) {
         try {
-          const response = await mockApi.get(`/posts/${storedId}`);
+          const response = await mockApi.get(`/posts/${editingId}`);
           const post = response.data; //응답 내부의 데이터 추출
 
           setInputValue({
@@ -28,10 +39,13 @@ function PostFrom() {
         } catch (e) {
           console.log('게시글 조회 실패: ', e);
         }
+      } else {
+        // 새로 작성 시 비워주기
+        setInputValue({title: '', body: ''})
       }
     }
     fetchPosts();
-  }, [storedId])
+  }, [editingId])
 
 
   //^ EventHandler
@@ -45,13 +59,13 @@ function PostFrom() {
 
   const handleSubmit = async () => {
     try {
-      if(storedId) {
+      if(editingId) {
         // 수정
-        await mockApi.put(`/posts/${storedId}`, {title, body});
+        await mockApi.put(`/posts/${editingId}`, {title, body});
         alert(`수정 완료`);
-        localStorage.removeItem('editingPostId');
-      }
-      else {
+        localStorage.removeItem('editingId');
+        setEditingId(null);
+      } else {
         // 생성
         if (title.trim() && body.trim()) {
           await mockApi.post("/posts", {title, body});
@@ -72,10 +86,10 @@ function PostFrom() {
   }
   return (
     <div>
-      <h2>{storedId ? "게시글 수정" : "게시글 생성"}</h2>
+      <h2>{editingId ? "게시글 수정" : "게시글 생성"}</h2>
       <input type="text" name='title' value={title} onChange={handleInputValueChange} placeholder='제목' /> <br />
       <textarea  name='body' value={body} onChange={handleInputValueChange} placeholder='내용' /> <br />
-      <button onClick={handleSubmit}>{storedId? "수정하기" : "등록하기"}</button>
+      <button onClick={handleSubmit}>{editingId? "수정하기" : "등록하기"}</button>
     </div>
   )
 }
