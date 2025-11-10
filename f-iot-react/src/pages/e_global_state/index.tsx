@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import A_Context from './A_Context';
 import CollapsibleSection from '@/components/CollapsibleSection';
+import B_Zustand from './B_Zustand';
+import SignIn from './SignIn';
 
 function Index() {
   const sectionsData = [
     {
       title: '1️. Context API',
       contents: [<A_Context />],
+    },
+    {
+      title: '2. Zustand',
+      contents: [<B_Zustand />],
+    },
+    {
+      title: '3. SignIn 페이지',
+      contents: [<SignIn />],
     },
   ];
 
