@@ -13,17 +13,17 @@ import { NavLink } from 'react-router-dom';
 //   : Link 기능 + 현재 활성화된 페이지 경로에 대한 추가적인 스타일 / 클래스명 적용 가능 기능
 //*  : 현재 경로에 따라 isActive를 사용해 스타일이나 클래스를 다르게 지정 가능함
 function Navibar() {
-  const links = ['/', 'basic', 'route', 'hooks', 'http', 'practice/post', 'practice/search' ];
+  const links = ['/', 'basic', 'route', 'hooks', 'http', 'global-state', 'practice/post', 'practice/search' ];
   return (
     <div style={{
       display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', margin: '10px', 
-      padding: '10px 20px', border: '1px solid black', borderRadius: '5px'
+      padding: '5px 10px', border: '1px solid black', borderRadius: '5px'
     }}>
       {links.map(link => (
         <NavLink to={link} key={link} style={({isActive}) => ({
           textDecoration: 'none', color: isActive ? 'white' : 'black',
           backgroundColor: isActive ? 'black' : 'white',
-          margin: '5px', padding: '10px 20px', borderRadius: '5px'
+          margin: '3px', padding: '5px 10px', borderRadius: '5px'
         })}>
           {link === '/' ? 'HOME' : link.toLocaleUpperCase()}
         </NavLink>

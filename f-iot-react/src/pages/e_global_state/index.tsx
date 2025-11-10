@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import A_HTTP from './A_HTTP';
-import B_Axios from './B_Axios';
+import A_Context from './A_Context';
 import CollapsibleSection from '@/components/CollapsibleSection';
-import C_ArticlePage from './C_ArticlePage';
 
 function Index() {
   const sectionsData = [
     {
-      title: '1️. AXIOS',
-      contents: [<B_Axios />],
-    },
-    {
-      title: '2. Article(REST API + REACT)',
-      contents: [<C_ArticlePage />],
+      title: '1️. Context API',
+      contents: [<A_Context />],
     },
   ];
 
@@ -38,7 +32,7 @@ function Index() {
           borderRadius: '6px',
         }}
       >
-        === 리액트 HTTP 통신 ===
+        === 리액트 전역 상태 관리 ===
       </h1>
 
       <div style={{ marginTop: '12px' }}>
