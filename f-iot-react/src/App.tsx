@@ -14,14 +14,29 @@ import Z_ProductReviews from './pages/b_Route/Z_ProductReviews'
 import Z_Dashboard from './pages/b_Route/Z_Dashboard'
 import HTTP from './pages/d_http'
 import GlobalState from './pages/e_global_state'
+import { useUIStore } from './stores/ui.store'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Toast from './components/Toast'
 
 function App() {
+  //@ zustand의 store는 호출 시 내부의 스토어를 객체 형식으로 반환함
+  // const {전역상태 내부의 속성 또는 함수명 } = useUIStore(); => 내부의 모든 속성과 메서드 호출 후 좌항에 일치하는 값만을 남기는 방식임
+  // 근데 아래와 같이 쓰면 필요한 메서드만 들고와서 효율적으로 쓸 수 있음
+  const darkMode = useUIStore(state => state.darkMode); // true: 다크 / false: 라이트
 
+  const appStyle = {
+    minHeight: '100vh',
+    backgroundColor: darkMode ? "#111" : "#fff",
+    color: darkMode ? "#bbb" : "#111",
+    transition: "all 0.3s ease"
+  }
   return (
-    <>
+    <div style={appStyle}>
     {/* 경로와 상관없이 렌더링 */}
-      <h1>Korea IoT React</h1>
-      <Navibar />
+      <Header />
+      <Sidebar />
+      {/* <Navibar /> */}
       {/* Routes 태그: Route를 감싸는 컴포넌트 */}
       <Routes>
         {/* Route 태그: 특정 경로에 컴포넌트 지정 (단일 태그 권장) */}
@@ -51,8 +66,8 @@ function App() {
         <Route path='/dashboard' element={<Z_Dashboard />}/>
 
       </Routes>
-
-    </>
+      <Toast />
+    </div>
   )
 }
 
