@@ -4,6 +4,8 @@ import CollapsibleSection from '@/components/CollapsibleSection';
 import B_Zustand from './B_Zustand';
 import SignIn from './SignIn';
 import GlobalData from './GlobalData';
+import TruckReservationList from '../../components/TruckReservationList';
+import TruckDetailPage from './TruckDetailPage';
 
 function Index() {
   const sectionsData = [
@@ -22,6 +24,10 @@ function Index() {
     {
       title: '4. zustand 연습(global-data)',
       contents: [<GlobalData />],
+    },
+    {
+      title: '5. zustand 연습 (reservation)',
+      contents: [<TruckDetailPage />],
     },
   ];
 
