@@ -3,6 +3,7 @@ import A_Context from './A_Context';
 import CollapsibleSection from '@/components/CollapsibleSection';
 import B_Zustand from './B_Zustand';
 import SignIn from './SignIn';
+import GlobalData from './GlobalData';
 
 function Index() {
   const sectionsData = [
@@ -17,6 +18,10 @@ function Index() {
     {
       title: '3. SignIn 페이지',
       contents: [<SignIn />],
+    },
+    {
+      title: '4. zustand 연습(global-data)',
+      contents: [<GlobalData />],
     },
   ];
 

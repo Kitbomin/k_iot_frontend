@@ -18,8 +18,22 @@ import { useUIStore } from './stores/ui.store'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Toast from './components/Toast'
+import { useGlobalStore } from './stores/global.store'
+import { useEffect } from 'react'
 
 function App() {
+  const {isLoaded, fetchGlobalData} = useGlobalStore();
+  
+  useEffect(() => {
+    if (!isLoaded) {
+      // 전역 상태관리에 Global 데이터가 없는 경우
+      fetchGlobalData();
+    }
+
+  }, [isLoaded, fetchGlobalData]); // 맨 처음 실행 + 의존성 배열값 변경마다 실행됨
+
+
+
   //@ zustand의 store는 호출 시 내부의 스토어를 객체 형식으로 반환함
   // const {전역상태 내부의 속성 또는 함수명 } = useUIStore(); => 내부의 모든 속성과 메서드 호출 후 좌항에 일치하는 값만을 남기는 방식임
   // 근데 아래와 같이 쓰면 필요한 메서드만 들고와서 효율적으로 쓸 수 있음
