@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+  /*@ box-sizing: 요소의 너비와 높이를 계산하는 방법을 지정
+    : border-box - 콘텐츠 / 패딩 / 보더 까지를 너비 높이로 계산함
+    : content-box (기본값) */
+  box-sizing: border-box;
+}
+
+body {
+  /* 페이지 전역 폰트 설정
+    : 폰트 관련 데이터는 assets/fonts에 저장하는것이 관례  */
+  font-family: Arial, Helvetica, sans-serif;
+  /* 팀 웹페이지 배경색 */
+  background-color: #f9fafb;
+  /* 팀 웹페이지 글자색 보통 같은 계열의 색으로 명도와 채도만 바꿈 */
+  color: #111827;
+}
+
+a {
+  text-decoration: none;
+  /* 상속을 받게 되 */
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
