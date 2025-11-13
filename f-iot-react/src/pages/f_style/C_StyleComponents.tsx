@@ -23,7 +23,7 @@ const Container = styled.div`
 
 
 const Button = styled.button`
-  background: ${({theme}) => theme.colors.primary};
+  background: var(--color-primary);
   color: white;
   border: none;
   border-radius: var(--radius-md);
@@ -51,6 +51,8 @@ export const theme = {
   },
 }
 
+// ctrl + shift + p
+// typescript: restart ts server
 
 
 
