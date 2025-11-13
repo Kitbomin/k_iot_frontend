@@ -4,6 +4,9 @@ import A_CSS from "./A_CSS";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import B_Module from "./B_Module";
 import C_StyleComponents from "./C_StyleComponents";
+import D_Emotion from "./D_Emotion";
+import D_EmotionPractice from "./emotion-practice/EmotionPractice";
+import EmotionPractice from "./emotion-practice/EmotionPractice";
 
 function Index() {
   const sectionsData = [
@@ -18,6 +21,14 @@ function Index() {
     {
       title: '3. StyleComponent',
       contents: [<C_StyleComponents />],
+    },
+    {
+      title: '4. Emotion',
+      contents: [<D_Emotion />],
+    },
+    {
+      title: '5. Emotion + 반응형',
+      contents: [<EmotionPractice />],
     },
   ];
 
