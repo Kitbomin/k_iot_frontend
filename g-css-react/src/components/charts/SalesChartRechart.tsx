@@ -35,6 +35,8 @@ function SalesChartRechart() {
               속성: strokeDasharray: 점선을 3px 그려짐 + 3px 비워짐 
                     strokeOpacity: 좀 흐릿하게 */}
           <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.06}/>
+
+          {/* X 축은 기준으로 쓰임 -> 어떤 데이터 집합을 구성할지 나열만 함 */}
           <XAxis dataKey='name' tick={{fontSize: 12}}/>
           {/* dataKey='sales' Y는 이거 안넣어도 됨 */}
           <YAxis  tick={{fontSize: 12}}/> 
@@ -52,6 +54,7 @@ function SalesChartRechart() {
                 -> lineChart에 fill을 넣으면 아래부분이 채워짐
                 -> 실제로는 Area영역에서 사용하는걸 권장함
           */}
+          {/* Y 축은 데이터로 쓰임 => Line이 어떤 필드를 그릴지 결정하고, Y축 기준 데이터를 받아 YAxis는 자동 스케일만 계산하게 됨 */}
           <Line 
             type='monotone' 
             dataKey='sales' 
